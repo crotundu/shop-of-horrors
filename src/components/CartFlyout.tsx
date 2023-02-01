@@ -31,6 +31,7 @@ export const CartFlyout = () => {
       ) : (
         <p className="instructions">Not much to dream about here!</p>
       )}
+      <button onClick={() => isCartOpen.set(!$isCartOpen)}>close</button>
     </aside>
   );
 };

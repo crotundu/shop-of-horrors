@@ -16,18 +16,17 @@ const item = storeItems.get()[itemId];
 			<img  src={item.imageSrc} alt={item.name} />
 			<div>
 				<h1><div class="text-gradient">{item.name}</div></h1>
-				<p>
-					Oh, nice choice!<br>If you have second thougts, you can <a href="/">Run back!</a>
-				</p>
+
 
 				<p class="instructions">
 					{item.description}
 				</p>
-
-				<AddToCartForm item={item} client:visible>
-					<button type="submit">Add to your nightmare</button>
-				</AddToCartForm>
-
+				<div class="actions">
+					<AddToCartForm item={item} client:visible>
+						<button type="submit">Add to My Nightmare</button>
+					</AddToCartForm>
+					<a href="/"><button>Run Back</button></a>
+				</div>
 
 			</div>
 
@@ -52,6 +51,12 @@ const item = storeItems.get()[itemId];
 	.product-layout img {
 		width: 100%;
 		max-width: 26rem;
+	}
+
+	.actions {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
 	}
 
 	button[type='submit'] {
