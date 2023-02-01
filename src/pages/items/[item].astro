@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { AddToCartForm } from '../../components/AddToCartForm';
+import {storeItems} from '../../storeStore'
+import {addCartItem} from '../../cartStore';
+
+export const getStaticPaths = async () => {
+	const response = await fetch('http://127.0.0.1:3000/store.json');
+	const data = await response.json();
+	return data.items.map((item)  => ({params: {item: item.id}}))
+}
+const { item: itemId } = Astro.params;
+const item = storeItems.get()[itemId];
+---
+<Layout title={item.name}>
+	<main>
+		<div class="product-layout">
+			<div>
+				<h1><div class="text-gradient">{item.name}</div></h1>
+				<p >
+					Oh, nice choice!<br>If you have second thougts, you can <a href="/">Run back!</a>
+				</p>
+
+				<p class="instructions">
+					{item.description}
+				</p>
+
+				<AddToCartForm item={item} client:load>
+					<button type="submit">Add to your nightmare</button>
+				</AddToCartForm>
+
+
+			</div>
+			<img src={item.imageSrc} alt={item.name} />
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: var(--content-max-width);
+	}
+
+	.product-layout {
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
+	}
+
+	.product-layout img {
+		width: 100%;
+		max-width: 26rem;
+	}
+
+	button[type='submit'] {
+		margin-block-start: 1rem;
+	}
+</style>

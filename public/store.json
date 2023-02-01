@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "IT",
+      "description": "The character is an ancient, trans-dimensional evil entity which preys upon the children of Derry, Maine, roughly every 27 years, using a variety of powers that include the ability to shapeshift, manipulate reality, and go unnoticed by adults.",
+      "imageSrc": "https://media.wired.com/photos/59b2b315bb67fa28cc7c55de/4:3/w_1682,h_1262,c_limit/IT-09695r-HP.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Chucky",
+      "description": "Chucky is portrayed as a vicious serial killer who, as he bleeds out from a gunshot wound, transfers his soul into a \"Good Guy\" doll and continuously tries to transfer it to a human body.",
+      "imageSrc": "https://cdnph.upi.com/svc/sv/i/4391663961128/2022/1/16639616187824/TV-review-Chucky-Season-2-takes-mythology-to-satisfying-unpredictable-places.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Michael Myers",
+      "description": "Michael Myers is a fictional character from the Halloween series of slasher films. He first appears in John Carpenter's Halloween as a young boy who murders his elder sister, Judith Myers. Fifteen years later, he returns home to Haddonfield, Illinois, to murder more teenagers.",
+      "imageSrc": "https://www.collectpcs.com/wp-content/uploads/2021/10/906787_press2.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Jason Voorhees",
+      "description": "Jason Voorhees is a character from the Friday the 13th series. He first appeared in Friday the 13th as the young son of camp-cook-turned-killer Mrs. Voorhees.",
+      "imageSrc": "https://www.denofgeek.com/wp-content/uploads/2023/01/Jason-Voorhees-of-Friday-the-13th-in-Freddy-vs-Jason.jpeg?fit=1400%2C828"
+    },
+    {
+      "id": "5",
+      "name": "Freddy Krueger",
+      "description": "Freddy Krueger is a fictional character and the primary antagonist in the A Nightmare on Elm Street film series. He was created by Wes Craven and made his debut in Craven's A Nightmare on Elm Street as the malevolent spirit of a child killer who had been burned to death by his victims' parents after evading prison.",
+      "imageSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-o2YVwTdnCDU_HzqHBWWyMw38JrngREz6RnHm1D1Z-WUNgxUzzJlOb-TSkjcSAEihv98&usqp=CAU"
+    }
+  ]
+}

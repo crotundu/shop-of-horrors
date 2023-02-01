@@ -3,17 +3,19 @@ export interface Props {
 	title: string;
 	body: string;
 	href: string;
+	imageSrc: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, imageSrc } = Astro.props;
 ---
 
 <li class="link-card">
 	<a href={href}>
-		<h2>
+		<h2><div><img src={imageSrc} />
 			{title}
 			<span>&rarr;</span>
-		</h2>
+		</div></h2>
+		<div></div>
 		<p>
 			{body}
 		</p>
@@ -42,6 +44,19 @@ const { href, title, body } = Astro.props;
 		color: #111;
 		background-color: white;
 		opacity: 0.8;
+	}
+	.link-card > a div {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 1rem;
+
+	}
+	.link-card > a img {
+		max-width: 100px;
+		max-height: 100px;
+
+		border-radius: 1rem;
 	}
 	h2 {
 		margin: 0;
