@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import { AddToCartForm } from '../../components/AddToCartForm';
 import {storeItems} from '../../storeStore'
-import {addCartItem} from '../../cartStore';
 
 export const getStaticPaths = async () => {
 	const response = await fetch('http://127.0.0.1:3000/store.json');
@@ -15,9 +14,10 @@ const item = storeItems.get()[itemId];
 <Layout title={item.name}>
 	<main>
 		<div class="product-layout">
+			<img  src={item.imageSrc} alt={item.name} />
 			<div>
 				<h1><div class="text-gradient">{item.name}</div></h1>
-				<p >
+				<p>
 					Oh, nice choice!<br>If you have second thougts, you can <a href="/">Run back!</a>
 				</p>
 
@@ -25,13 +25,13 @@ const item = storeItems.get()[itemId];
 					{item.description}
 				</p>
 
-				<AddToCartForm item={item} client:load>
+				<AddToCartForm item={item} client:visible>
 					<button type="submit">Add to your nightmare</button>
 				</AddToCartForm>
 
 
 			</div>
-			<img src={item.imageSrc} alt={item.name} />
+
 		</div>
 	</main>
 </Layout>
@@ -39,6 +39,7 @@ const item = storeItems.get()[itemId];
 <style>
 	main {
 		margin: auto;
+		margin-top: 2rem;
 		padding: 1em;
 		max-width: var(--content-max-width);
 	}

@@ -2,10 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import {storeItems} from '../storeStore'
-
-const response = await fetch('http://127.0.0.1:3000/store.json');
-const data = await response.json();
-data.items.forEach(item => storeItems.setKey(item.id, item));
 ---
 
 <Layout title="Welcome to my Little Shop of Horrors">

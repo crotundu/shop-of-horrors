@@ -1,5 +1,6 @@
 import { useStore } from "@nanostores/react";
-import { cartItems, isCartOpen } from "../cartStore";
+import { useCallback } from "react";
+import { cartItems, isCartOpen, removeItem } from "../cartStore";
 import styles from "./CartFlyout.module.css";
 
 export const CartFlyout = () => {
@@ -11,7 +12,11 @@ export const CartFlyout = () => {
       {Object.values($cartItems).length ? (
         <ul className={styles.list} role="list">
           {Object.values($cartItems).map((cartItem) => (
-            <li className={styles.listItem}>
+            <li
+              key={cartItem.id}
+              className={styles.listItem}
+              onClick={() => removeItem(cartItem.id)}
+            >
               <img
                 className={styles.listItemImg}
                 src={cartItem.imageSrc}
@@ -24,7 +29,7 @@ export const CartFlyout = () => {
           ))}
         </ul>
       ) : (
-        <p>Your nightmare is empty!</p>
+        <p className="instructions">Not much to dream about here!</p>
       )}
     </aside>
   );
