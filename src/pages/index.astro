@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import {storeItems} from '../storeStore'
+import data from '../items.json';
+
+data.items.forEach(item => storeItems.setKey(item.id, item));
 ---
 
 <Layout title="Welcome to my Little Shop of Horrors">

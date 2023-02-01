@@ -1,11 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { AddToCartForm } from '../../components/AddToCartForm';
-import {storeItems} from '../../storeStore'
+import {storeItems} from '../../storeStore';
+import data from '../../items.json';
 
 export const getStaticPaths = async () => {
-	const response = await fetch('http://127.0.0.1:3000/store.json');
-	const data = await response.json();
 	return data.items.map((item)  => ({params: {item: item.id}}))
 }
 const { item: itemId } = Astro.params;
